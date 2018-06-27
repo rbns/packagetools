@@ -89,13 +89,6 @@ func packageTimestamps(filelist io.Reader, prefixes ...string) (map[string]info,
 			continue
 		}
 
-		if fs[2] != "root" || fs[3] != "root" {
-			if debug {
-				log.Println("timestamps: skipping line with uid/gid not root:", s.Text())
-			}
-			continue
-		}
-
 		if len(prefixes) != 0 && !hasPrefixes(fs[7], prefixes...) {
 			if debug {
 				log.Println("timestamps: skipping line with no matching prefix in file:", s.Text())
