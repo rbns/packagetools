@@ -91,6 +91,7 @@ func main() {
 	availableFlag := flag.Bool("available", false, "list repository packages")
 	listFlag := flag.Bool("list", false, "list installed packages")
 	upgradeFlag := flag.Bool("upgrade", false, "list upgradeable packages")
+	flag.BoolVar(&debug, "debug", false, "debug output")
 
 	flag.Usage = func() {
 		fmt.Fprintf(flag.CommandLine.Output(), "Usage of %s:\n", os.Args[0])
